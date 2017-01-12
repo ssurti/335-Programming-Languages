@@ -1,0 +1,85 @@
+CSE 335: Lecture 1
+I.	Elements of Programming
+ • Primitive expressions
+   o Defined by basic data types
+     Java
+       a)	 3, 5, …
+       b)	3+5
+       c)	3+5+10
+       d)	True, false
+       e)	!false
+       f)	True&&true&&true
+       g)	“hello”
+       h)	“hello”.substring(2)
+       i)	“hello”.length()
+       j)	“hello” + “world”
+    	Scheme/Racket
+      a)	3, 5, …
+      b)	(+ 3 5)
+        o	Parentheses are essential and the function always comes first
+      c)	(+ 3 5 100)
+      d)	#t, #f
+      e)	(not #f)
+      f)	(and #t #t #t)
+      g)	“hello”
+      h)	(substring “hello” 2)
+      i)	(string-length “hello”)
+      j)	(string-append “hello” “world”)
+ • Means of Combinations
+   o Compound elements are built from simpler ones
+      	(+  (* 2 4) (+ 3 5))= 2*4 + (3+5)=16 (bottom up process)
+      	(* 3 (+  (+2  4) (+ 3  5)))
+ • Means of Abstraction
+   o By which compound elements can be named and reused as units
+      	Java
+        a)	class A{ 
+            int square (int i){
+	          return i*i:
+            }
+            }
+        b)	class A{
+            int add2(int i j){
+            return i+j;
+            }
+            }
+      	Scheme/Racket
+        a)	(define  
+ 	          (square i) 
+		        (* i i ) 
+             )
+        b)	(define (add2 i j) (+ i j))
+        c)	(define forty-two  42)
+        d)	(define (forty-two)  42)
+        e)	if(> 3 3)
+            #f
+            #t) 
+        f)	if(> 3 3)
+            #t
+            #f) 
+        g)	Find the minimum of three values x, y, z
+          o	(define (min335 x y z) 
+            (if (and (<= x y )
+	          (<=x z)
+             x
+            (if (<= y z)
+              y
+              z)
+            (min335 1 2 3) 
+        h) (define (min335 x y z) 
+           (if (and (<= x y )
+	         (<=x z)
+           (+ y z)
+           (if (<= y z)
+           (+ x z)
+           (+x y))
+           (min335 1 2 3)
+        i)  (define (test-cond x)
+            (cond  
+	          ((= x 1) “one”)
+	          ((= x 2) “two”)
+	          (else “others”)
+             )) 
+        j)	Factorial: (define (fact n) 
+            ( if (= n 0)
+             1 
+            ( * n (fact (-n 1)))))
